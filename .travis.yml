@@ -1,0 +1,29 @@
+languaje: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+notifications:
+  email: 
+    recipients:
+      - camiloa.mejia@udea.edu.co
+    on_success: always
+    on_failure: always
+
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  keep_history: true
+  api_key: e14cb4c7-11e6-4389-b9d9-6abb2cde2cad
+  app: platzi-store-azulado
+  on: 
+    repo: azuladotoujours/platzi-store-backend
